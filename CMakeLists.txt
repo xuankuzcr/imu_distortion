@@ -38,7 +38,7 @@ catkin_package(
   INCLUDE_DIRS include
 )
 
-add_executable(imu_process src/imu_processor/data_process_node.cpp src/imu_processor/data_process.cpp
-                           src/imu_processor/gyr_int.cpp )
+add_executable(imu_process src/data_process_node.cpp src/data_process.cpp
+                           src/gyr_int.cpp )
 target_link_libraries(imu_process ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBS})
 

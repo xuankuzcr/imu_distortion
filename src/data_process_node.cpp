@@ -5,7 +5,7 @@
 #include <mutex>
 #include <thread>
 
-#include "imu_processor/data_process.h"
+#include "data_process.h"
 
 /// *************Config data
 std::string topic_pcl = "/livox_pcl0";

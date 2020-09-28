@@ -1,4 +1,4 @@
-#include "imu_processor/gyr_int.h"
+#include "gyr_int.h"
 #include <ros/ros.h>
 
 using Sophus::SO3d;
