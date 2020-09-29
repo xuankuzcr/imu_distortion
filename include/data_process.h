@@ -8,7 +8,7 @@
 #include <sensor_msgs/PointCloud2.h>
 #include <fstream>
 #include "gyr_int.h"
-#include "loam_horizon/common.h"
+#include "common.h"
 #include "sophus/se3.hpp"
 
 struct MeasureGroup {
