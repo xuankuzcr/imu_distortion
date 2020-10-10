@@ -37,8 +37,9 @@ catkin_package(
   DEPENDS EIGEN3 PCL 
   INCLUDE_DIRS include
 )
-
-add_executable(imu_process src/data_process_node.cpp src/data_process.cpp
+add_executable(livox_repub src/livox_repub.cpp)
+target_link_libraries(livox_repub ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBS})
+add_executable(imu_distortion src/data_process_node.cpp src/data_process.cpp
                            src/gyr_int.cpp )
-target_link_libraries(imu_process ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBS})
+target_link_libraries(imu_distortion ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBS})
 

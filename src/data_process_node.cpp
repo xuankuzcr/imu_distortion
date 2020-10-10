@@ -7,11 +7,6 @@
 
 #include "data_process.h"
 
-/// *************Config data
-std::string topic_pcl = "/livox_pcl0";
-std::string topic_imu = "/imu";
-/// *************
-
 /// To notify new data
 std::mutex mtx_buffer;
 std::condition_variable sig_buffer;
@@ -143,8 +138,8 @@ int main(int argc, char **argv) {
   ros::NodeHandle nh;
   signal(SIGINT, SigHandle);
 
-  ros::Subscriber sub_pcl = nh.subscribe(topic_pcl, 100, pointcloud_cbk);
-  ros::Subscriber sub_imu = nh.subscribe(topic_imu, 1000, imu_cbk);
+  ros::Subscriber sub_pcl = nh.subscribe("/livox_pcl0", 100, pointcloud_cbk);
+  ros::Subscriber sub_imu = nh.subscribe("/imu", 1000, imu_cbk);
 
   std::shared_ptr<ImuProcess> p_imu(new ImuProcess());
 

@@ -1,0 +1,12 @@
+<launch>
+
+  <!--rosparam param="ExtIL"> [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0]</rosparam-->
+  <node pkg="imu_distortion" type="imu_distortion" name="imu_distortion" output="screen">
+       <remap from="/imu" to="/livox/imu" />
+       <!--remap from="/livox_pcl0" to="/livox/lidar" /-->
+       
+  </node>
+	
+   <node pkg="imu_distortion" type="livox_repub" name="repub"/>
+   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find imu_distortion)/rviz_cfg/imu_distortion.rviz"/>
+  </launch>
